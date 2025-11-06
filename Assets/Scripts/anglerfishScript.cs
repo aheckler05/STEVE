@@ -5,7 +5,6 @@ public class anglerfishScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "box" || collision.gameObject.name == "Squid"){
-            Debug.Log("puzzle restarted");
             //animation here
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
