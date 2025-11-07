@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combat.unity
     guid: 0e711009da627a24abfdf47c36948d50
+  - enabled: 1
+    path: Assets/Scenes/Combat Victory.unity
+    guid: ffdc458b3ea86304280115f9437b79af
   - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 3c1a7a8ea37a54a47a9f0d883346fab7
