@@ -13,6 +13,8 @@ public class KrillScript : MonoBehaviour
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
         if(enemyHealth.boss){
             enemyHealth.Heal();
+        }else{
+            enemyHealth.TakeDamage(5);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

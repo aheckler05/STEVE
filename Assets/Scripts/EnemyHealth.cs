@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth = 100f;
     private float currentHealth;
     public bool boss;
+    public bool player;
     public Image healthBarFill;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +29,8 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
             if(boss){
                 SceneManager.LoadScene(4);
+            }if(player){
+                SceneManager.LoadScene(0);
             }
         }
     }
