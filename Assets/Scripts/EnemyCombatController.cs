@@ -98,11 +98,11 @@ public class EnemyController : UnitTemplate
             this.UsableAttacks.Add(new attackpackage(false,5,true,genericdebuffs[4],"Surface Slap"));
             break;
         case "Whale":
-            this.Health=300;
+            this.Health=150;
             this.Speed=20;
-            this.PAttack=30;
-            this.MAttack=50;
-            this.PResist=35;
+            this.PAttack=25;
+            this.MAttack=25;
+            this.PResist=25;
             this.MResist=15;
             this.ability1="Krill Swarm";
             this.ability2="Filter Feeder";
