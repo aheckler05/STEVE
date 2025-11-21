@@ -1,6 +1,5 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using System.Collections;
 
 public class pauseMenu : MonoBehaviour
 {
@@ -9,14 +8,6 @@ public class pauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject pauseButton;
-
-    AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -25,12 +16,10 @@ public class pauseMenu : MonoBehaviour
             if (gamePaused)
             {
                 Resume();
-                audioManager.PlaySFX(audioManager.button);
             }
             else
             {
                 Pause();
-                audioManager.PlaySFX(audioManager.button);
             }
         } 
     }
@@ -41,7 +30,6 @@ public class pauseMenu : MonoBehaviour
         pauseButton.SetActive(true);
         Time.timeScale = 1f;
         gamePaused = false;
-        audioManager.PlaySFX(audioManager.button);
     }
 
     public void Pause()
@@ -50,43 +38,25 @@ public class pauseMenu : MonoBehaviour
         pauseButton.SetActive(false);
         Time.timeScale = 0f;
         gamePaused = true;
-        audioManager.PlaySFX(audioManager.button);
     }
 
     public void loadMenu()
     {
-        StartCoroutine(menuLevelSFX());
+        Debug.Log("Loading menu");
+        SceneManager.LoadScene("MainMenu");
+        Resume();
     }
 
     public void quitGame()
     {
         Debug.Log("quitting");
         Application.Quit();
-        audioManager.PlaySFX(audioManager.button);
     }
-
 
     public void restartLevel()
     {
-        StartCoroutine(restartLevelSFX());
-    }
-
-    IEnumerator restartLevelSFX()
-    {
-        audioManager.PlaySFX(audioManager.button);
-        yield return new WaitForSecondsRealtime(audioManager.button.length);
-
-        Resume();
+        Debug.Log("restarting level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-        IEnumerator menuLevelSFX()
-    {
-        audioManager.PlaySFX(audioManager.button);
-        yield return new WaitForSecondsRealtime(audioManager.button.length);
-
         Resume();
-        SceneManager.LoadScene("MainMenu");
     }
 }
-

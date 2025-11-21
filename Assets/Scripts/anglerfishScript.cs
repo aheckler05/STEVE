@@ -1,22 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 public class anglerfishScript : MonoBehaviour
 {
-
-    AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public SpriteRenderer spriteRenderer;
     public Sprite attackSprite; 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "box" || collision.gameObject.name == "Squid"){
             //animation here
-            audioManager.PlaySFX(audioManager.death);
             spriteRenderer.sprite = attackSprite;
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
