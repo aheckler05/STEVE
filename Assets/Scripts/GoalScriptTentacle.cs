@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GoalScriptTentacle : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -9,6 +9,7 @@ public class GoalScriptTentacle : MonoBehaviour
     }
     void OnMouseDown(){
         Debug.Log("Success!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //next puzzle
         
     }
