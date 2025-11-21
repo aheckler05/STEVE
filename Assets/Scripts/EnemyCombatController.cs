@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class EnemyController : UnitTemplate
 {
-    
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     public string variant;
     public int eID;
     System.Random rand=new System.Random();
@@ -159,6 +163,7 @@ public class EnemyController : UnitTemplate
             CSC.CombatOver=true;
             CSC.StopAllCoroutines();
             SceneManager.LoadScene("Combat Victory");
+            audioManager.PlaySFX(audioManager.win);
         }
     }
 }

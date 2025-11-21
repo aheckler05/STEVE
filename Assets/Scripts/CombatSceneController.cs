@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 public class CombatSceneController : MonoBehaviour
 {
-    
+    AudioManager audioManager;
     public UnityEvent e_turncompleted;
     public int EnemyCount;
     public string[] EnemyVariants={"Shark","Pufferfish","Dolphin","Crab","Octopus","Starfish","Fisherman","Whale","Krill"};
@@ -36,6 +36,7 @@ public class CombatSceneController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         if (e_turncompleted == null)
         {
             e_turncompleted = new UnityEvent();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class UnitTemplate : MonoBehaviour
 {
+    AudioManager audioManager;
     public int Health;
     public int Speed;
     public int Turnmeter;
@@ -40,7 +41,8 @@ public class UnitTemplate : MonoBehaviour
 
 // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
-    {
+    { 
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         debuff poison= new debuff("Poisoned",10,2);
         debuff slow= new debuff("Slowed",10,2);
         debuff hinder= new debuff("Hindered",10,2);
@@ -137,10 +139,12 @@ public class UnitTemplate : MonoBehaviour
         if (damagetype)
         {
             t.Health= t.Health-(outgoingdamage+this.MAttack-t.MResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
         else
         {
             t.Health= t.Health-(outgoingdamage+this.PAttack-t.PResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
 
         if (isdebuff)
@@ -157,10 +161,12 @@ public class UnitTemplate : MonoBehaviour
         if (damagetype)
         {
             t.Health= t.Health-(outgoingdamage+this.MAttack-t.MResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
         else
         {
             t.Health= t.Health-(outgoingdamage+this.PAttack-t.PResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
 
         if (isdebuff)
@@ -181,10 +187,12 @@ public class UnitTemplate : MonoBehaviour
         if (p.pom)
         {
             t.Health= t.Health-(p.att+this.MAttack-t.MResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
         else
         {
             t.Health= t.Health-(p.att+this.PAttack-t.PResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
 
         if (p.isd)
@@ -195,6 +203,7 @@ public class UnitTemplate : MonoBehaviour
         if (t.Health <= 0)
         {
             t.Death();
+            audioManager.PlaySFX(audioManager.death);
         }
 
     }
@@ -205,10 +214,12 @@ public class UnitTemplate : MonoBehaviour
         if (p.pom)
         {
             t.Health= t.Health-(p.att+this.MAttack-t.MResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
         else
         {
             t.Health= t.Health-(p.att+this.PAttack-t.PResist);
+            audioManager.PlaySFX(audioManager.hit);
         }
 
         if (p.isd)
@@ -219,6 +230,7 @@ public class UnitTemplate : MonoBehaviour
         if (t.Health <= 0)
         {
             t.Death();
+            audioManager.PlaySFX(audioManager.death);
         }
     }
 

@@ -2,6 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GoalScriptTentacle : MonoBehaviour
 {
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private Rigidbody2D rb;
     void Start()
@@ -14,6 +19,7 @@ public class GoalScriptTentacle : MonoBehaviour
         Collider2D[] colliderAtPoint = Physics2D.OverlapPointAll(transform.position);
         Debug.Log("Overlapping = " + colliderAtPoint.Length);
         if (colliderAtPoint.Length == 1){
+            audioManager.PlaySFX(audioManager.win);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }else{
             //Debug.Log("Blocked by " + colliderAtPoint.name);
