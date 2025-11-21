@@ -18,8 +18,6 @@ public class SelectLevelButtons : MonoBehaviour
     public void level2(){
         SceneManager.LoadScene(5);
     }
-    // Update is called once per frame
-    void Update(){
     IEnumerator button1SFX()
     {
         audioManager.PlaySFX(audioManager.button);
@@ -27,6 +25,8 @@ public class SelectLevelButtons : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
-    }
+    }// Update is called once per frame
+    void Update(){
+    
     }
 }
