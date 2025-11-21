@@ -43,7 +43,7 @@ public class CombatSceneController : MonoBehaviour
             e_turncompleted.AddListener(TurnHelper);
         }
 
-        for(int i=0;i<EnemyCount;i++)
+        /*for(int i=0;i<EnemyCount;i++)
         {
             units[i].variant=EnemyVariants[rand.Next(6)];
         }
@@ -52,7 +52,7 @@ public class CombatSceneController : MonoBehaviour
             int coinflip=rand.Next(2);
             if(coinflip==1){units[i].variant=EnemyVariants[6];}
             else if(coinflip==0){units[i].variant=EnemyVariants[7];}
-        }
+        }*/
         for(int i=EnemyCount+BossCount;i<8;i++)
         {
             units[i].gameObject.SetActive(false);

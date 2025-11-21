@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyController : UnitTemplate
 {
-    AudioManager audioManager;
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+
     public string variant;
     public int eID;
     System.Random rand=new System.Random();

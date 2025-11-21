@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class UnitTemplate : MonoBehaviour
 {
-    AudioManager audioManager;
+    public static AudioManager audioManager;
     public int Health;
     public int Speed;
     public int Turnmeter;

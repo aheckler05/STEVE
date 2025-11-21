@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : UnitTemplate
 {
-    AudioManager audioManager;
+    
     public EnemyController eTarget;
     private bool attackchosen=false;
     private bool magicintent;
@@ -17,7 +17,7 @@ public class PlayerController : UnitTemplate
     
         void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        
         this.Health = 300;
         this.Speed = 30;
         this.Turnmeter = 0;
