@@ -36,7 +36,7 @@ public class GridSquare : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collision){
+    void OnTriggerEnter2D(Collider2D collision){
         if(!flashes){
             audioManager.PlaySFX(audioManager.death);
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
