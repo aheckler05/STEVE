@@ -8,6 +8,7 @@ TagManager:
   - Urchin
   - Audio
   - Goal
+  - hazard
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class SimonSaysMovement : MonoBehaviour
     public float moveDistance = 1f;
     private float x = 0;
     private float y = 0;
+    public bool slugged = false;
     AudioManager audioManager;
     private void Awake()
     {
@@ -34,21 +35,47 @@ public class SimonSaysMovement : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W)){
-            y = moveDistance;
-            x = 0;
+            if(!slugged){
+                y = moveDistance;
+                x = 0;
+            }else{
+                y = -moveDistance;
+                x = 0;
+            }
         }else if(Input.GetKeyDown(KeyCode.S)){
+            if(!slugged){
             y = -moveDistance;
             x = 0;
+            }else{
+                y = moveDistance;
+                x = 0;
+            }
         }else if(Input.GetKeyDown(KeyCode.A)){
-            x = -moveDistance;
-            y = 0;
+            if(!slugged){
+                x = -moveDistance;
+                y = 0;
+            }else{
+                x = moveDistance;
+                y = 0;
+            }
         }else if(Input.GetKeyDown(KeyCode.D)){
-            x = moveDistance;
-            y = 0;
+            if(!slugged){
+                x = moveDistance;
+                y = 0;
+            }else{
+                x = -moveDistance;
+                y=0;
+            }
         }
         transform.position = new Vector2(transform.position.x+x,transform.position.y+y);
         y=0;x=0;
         
+    }
+    void onTriggerEnter2D(Collider2D collision){
+        Debug.Log("collide");
+        if(collision.gameObject.tag == "hazard"){
+            slugged = true;
+        }
     }
     
 }
