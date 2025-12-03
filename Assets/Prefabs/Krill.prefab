@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8079543532107680191}
   - component: {fileID: 5852339454602834333}
-  - component: {fileID: 6468686224933413771}
   - component: {fileID: 4476144535522579025}
-  - component: {fileID: -5777681629017110939}
-  m_Layer: 0
+  - component: {fileID: 5445594804472637057}
+  m_Layer: 6
   m_Name: Krill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,33 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6468686224933413771
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3445139094611765281}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!70 &4476144535522579025
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -154,7 +126,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 10.52, y: 9.02}
   m_Direction: 0
---- !u!114 &-5777681629017110939
+--- !u!114 &5445594804472637057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +135,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3445139094611765281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21794e61ca8b5d04e8f8c6596ede34dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f9d0a3ae7685714c8a143ca269ae61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  target: {x: 0, y: 0}
+  ptemp: {fileID: 0}
+  colorindex: 0
+  currentpos: {x: 0, y: 0}
