@@ -25,7 +25,7 @@ public class HarpoonScript : MonoBehaviour
         this.ptemp=GameObject.FindWithTag("Player").GetComponent<PuzzleMovement>();
 
         this.gameObject.transform.localScale=new Vector3(5f,5f,0f);
-        startpos.y=Random.Range(-4.5f,4.5f);
+        startpos.y=Random.Range(-4.5f,0f);
         int tempbool=Random.Range(0,2);
         if(startpos.y>0){if(tempbool>0){startpos.x=Random.Range(3f,8.5f);}else{startpos.x=Random.Range(-8.5f,-3f);}}
         else{startpos.x=Random.Range(-8.5f,8.5f);}

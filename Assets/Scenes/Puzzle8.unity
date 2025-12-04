@@ -1468,7 +1468,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fe1b977079c1a4c8e8d643f0b7063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdolled: 0
+  Hearts: []
+  Lives: 6
   moveSpeed: 3
+  movementDirection: {x: 0, y: 0}
 --- !u!114 &551534767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5327,7 +5331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5712081617812127273, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -3.17
       objectReference: {fileID: 0}
     - target: {fileID: 5712081617812127273, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_LocalPosition.z
