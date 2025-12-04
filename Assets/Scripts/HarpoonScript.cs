@@ -72,7 +72,7 @@ public class HarpoonScript : MonoBehaviour
                 {
                 Vector2 direction = collision.contacts[0].point - (Vector2)this.transform.position;
 		        direction = -direction.normalized;
-		        GetComponent<Rigidbody2D>().AddForce(direction*0.5f);
+		        GetComponent<Rigidbody2D>().AddForce(direction*0.1f);
                 }
                 else
                 {

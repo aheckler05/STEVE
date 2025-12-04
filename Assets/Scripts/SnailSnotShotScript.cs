@@ -42,8 +42,8 @@ public class SnailShot : MonoBehaviour
         else if (collision.gameObject.name == "box")
         {
             Vector2 direction = collision.contacts[0].point - (Vector2)this.transform.position;
-		    direction = -direction.normalized;
-		    GetComponent<Rigidbody>().AddForce(direction*100);
+		    direction = direction.normalized;
+		    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction*500);
             Destroy(this.gameObject);
         }
         else if(!(collision.gameObject.name == "Snail"))
