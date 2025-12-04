@@ -31,13 +31,13 @@ public class SnailShot : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "Squid")
+        if(collision.gameObject.name == "Squid"&&!collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
         {
             //animation here
             audioManager.PlaySFX(audioManager.death);
             //spriteRenderer.sprite = attackSprite;
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
         }
         else if (collision.gameObject.name == "box")
         {
