@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip hit;
     public AudioClip damage;
     public AudioClip button;
+    public AudioClip explode;
 
     public static AudioManager instance;
     private void Awake()
