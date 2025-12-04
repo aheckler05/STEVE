@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class whaleScript : MonoBehaviour
 {
     public GameObject krillPrefab;
+    public GameObject colorlessKrillPrefab;
     public GameObject harpoonPrefab;
     public float spawnInterval = 2f;
     private float timeSinceLastSpawn;
@@ -17,6 +18,8 @@ public class whaleScript : MonoBehaviour
     public int ComboCount=1;
 
     public Queue<int> ColorPattern=new Queue<int>();
+    public bool patterncomplete;
+    [SerializeField] private RectTransform healthPanel; 
 
     AudioManager audioManager;
     private void Awake()
@@ -29,20 +32,27 @@ public class whaleScript : MonoBehaviour
         timeSinceLastSpawn = spawnInterval;
         this.HealthBar=156;
         StartCoroutine(KrillSpit());
+        this.patterncomplete=true;
     }
 
     IEnumerator KrillSpit()
     {
+        
         int tempcount;
         int tempcolorindex;
         GameObject krilltemp;
         GameObject harpoontemp;
+
         while(this.HealthBar>0)
         {
-            krilltemp = Instantiate(krillPrefab,this.transform.position,Quaternion.identity,this.transform);
-            krilltemp.GetComponent<KrillScript>().Coloring(9);
-        if(ColorPattern.Count>0)
+        if(this.patterncomplete)
         {
+            this.ColorPattern.Clear();
+            foreach(GameObject h in GameObject.FindGameObjectsWithTag("Harpoon"))
+                {
+                    Destroy(h);
+                }
+            patterncomplete=false;
             switch (this.HealthBar)
             {
             case (<=52):
@@ -66,8 +76,8 @@ public class whaleScript : MonoBehaviour
                 tempcolorindex=Random.Range(0,8);
                 krilltemp = Instantiate(krillPrefab,this.transform.position,Quaternion.identity,this.transform);
                 krilltemp.GetComponent<KrillScript>().Coloring(tempcolorindex);
-                if(i!=(tempcount-1)){ColorPattern.Enqueue(tempcolorindex);}
-                yield return new WaitForSeconds(0.5f);
+                ColorPattern.Enqueue(tempcolorindex);
+                yield return new WaitForSeconds(0.7f);
             }
             if(ColorPattern.TryPeek(out tempcount))
             {
@@ -80,6 +90,15 @@ public class whaleScript : MonoBehaviour
             tempcolorindex=Random.Range(0,8);
             harpoontemp=Instantiate(harpoonPrefab,this.transform.position,Quaternion.identity,this.transform);
             harpoontemp.GetComponent<HarpoonScript>().Coloring(tempcolorindex);
+        }
+        else
+        {
+            krilltemp = Instantiate(colorlessKrillPrefab,this.transform.position,Quaternion.identity,this.transform);
+            krilltemp.GetComponent<KrillScript>().Coloring(9);
+        }
+        if(GameObject.FindWithTag("Harpoon")==null)
+        {
+            this.patterncomplete=true;
         }
             yield return new WaitForSeconds(2f);
             
@@ -96,5 +115,6 @@ public class whaleScript : MonoBehaviour
         {
             SceneManager.LoadScene("Combat Victory");
         }
+        healthPanel.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0f,((this.HealthBar/156f)*360f));
     }
 }

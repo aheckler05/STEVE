@@ -52,7 +52,7 @@ public class dolphinController : MonoBehaviour
             //play bubble warning anim?
             Vector2 temp=ptemp.transform.position;
             GameObject bubble = Instantiate(bubbleringprefab,this.transform.position,Quaternion.identity,this.transform);
-            bubble.GetComponent<BubbleRing>().sizetarget=2f;
+            bubble.GetComponent<BubbleRing>().sizetarget=3f;
             bubble.GetComponent<BubbleRing>().timetarget=2.5f;
             bubble.GetComponent<BubbleRing>().postarget=this.transform.position;
             bubble.GetComponent<BubbleRing>().Trigger();    

@@ -9,7 +9,7 @@ public class CrabScript : MonoBehaviour
     private Vector2 postarget;
     [SerializeField] List<Vector2> patrolpoints;
     [SerializeField] bool islooping=true;
-    private float speed=0.1f;
+    private float speed=0.002f;
     AudioManager audioManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

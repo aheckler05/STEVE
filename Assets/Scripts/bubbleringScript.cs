@@ -29,7 +29,7 @@ public class BubbleRing : MonoBehaviour
         else if (collision.gameObject.name == "box")
         {
             Vector2 targetpos=Vector2.LerpUnclamped(collision.otherRigidbody.position, collision.rigidbody.position,2f);
-            collision.rigidbody.AddForce(targetpos*800);
+            collision.rigidbody.AddForce(targetpos*2000);
             Destroy(this.gameObject);
         }
 

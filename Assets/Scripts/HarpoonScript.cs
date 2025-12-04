@@ -20,16 +20,19 @@ public class HarpoonScript : MonoBehaviour
 
     void OnEnable()
     {
+        this.whaleref=GameObject.Find("Whale").GetComponent<whaleScript>();
+        this.target=whaleref.gameObject.GetComponent<Transform>().position;
+        this.ptemp=GameObject.FindWithTag("Player").GetComponent<PuzzleMovement>();
+
         this.gameObject.transform.localScale=new Vector3(5f,5f,0f);
         startpos.y=Random.Range(-4.5f,4.5f);
         int tempbool=Random.Range(0,2);
         if(startpos.y>0){if(tempbool>0){startpos.x=Random.Range(3f,8.5f);}else{startpos.x=Random.Range(-8.5f,-3f);}}
         else{startpos.x=Random.Range(-8.5f,8.5f);}
-        this.gameObject.GetComponent<Transform>().position=startpos;
-        this.whaleref=GameObject.Find("Whale").GetComponent<whaleScript>();
-        this.target=whaleref.gameObject.GetComponent<Transform>().position;
-        this.ptemp=GameObject.FindWithTag("Player").GetComponent<PuzzleMovement>();
 
+        this.gameObject.GetComponent<Transform>().position=startpos;
+
+        
 
     }
 
@@ -52,15 +55,30 @@ public class HarpoonScript : MonoBehaviour
         int tempcheck=0;
         if(collision.gameObject.name == "Squid"&&!this.enroute&&whaleref.ColorPattern.TryPeek(out tempcheck))
         {
-            if(this.colorindex==whaleref.ColorPattern.Peek())
+            if(this.colorindex==tempcheck)
             {
                 this.enroute=true;
                 whaleref.ColorPattern.Dequeue();
+                if(whaleref.ColorPattern.Count<1)
+                {
+                    whaleref.patterncomplete=true;
+                }
             }
             else
             {
                 collision.gameObject.GetComponent<PuzzleMovement>().LifeLoss(1);
                 whaleref.Damage(0);
+                if(whaleref.ColorPattern.Contains(this.colorindex))
+                {
+                Vector2 direction = collision.contacts[0].point - (Vector2)this.transform.position;
+		        direction = -direction.normalized;
+		        GetComponent<Rigidbody2D>().AddForce(direction*0.5f);
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                }
+
             }
         }
     }

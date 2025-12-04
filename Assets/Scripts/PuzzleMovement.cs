@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 
 public class PuzzleMovement : MonoBehaviour
@@ -8,6 +9,8 @@ public class PuzzleMovement : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private bool ragdolled=false;
     AudioManager audioManager;
+
+    [SerializeField] private List<GameObject> Hearts=new List<GameObject>();
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -54,5 +57,6 @@ public class PuzzleMovement : MonoBehaviour
             audioManager.PlaySFX(audioManager.death);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        Hearts[5-this.Lives].SetActive(false);
     }
 }
