@@ -16,7 +16,10 @@ public class SelectLevelButtons : MonoBehaviour
         StartCoroutine(button1SFX());
     }
     public void level2(){
-        SceneManager.LoadScene(5);
+        StartCoroutine(button2SFX());
+    }
+    public void level3(){
+        StartCoroutine(button3SFX());
     }
     IEnumerator button1SFX()
     {
@@ -28,5 +31,21 @@ public class SelectLevelButtons : MonoBehaviour
     }// Update is called once per frame
     void Update(){
     
+    }
+    IEnumerator button2SFX()
+    {
+        audioManager.PlaySFX(audioManager.button);
+        yield return new WaitForSecondsRealtime(audioManager.button.length);
+
+        SceneManager.LoadScene(6);
+        
+    }
+    IEnumerator button3SFX()
+    {
+        audioManager.PlaySFX(audioManager.button);
+        yield return new WaitForSecondsRealtime(audioManager.button.length);
+
+        SceneManager.LoadScene(9);
+        
     }
 }

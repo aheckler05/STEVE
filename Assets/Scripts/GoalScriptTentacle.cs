@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GoalScriptTentacle : MonoBehaviour
 {
+    public bool lastPuzzle;
     AudioManager audioManager;
     private void Awake()
     {
@@ -20,7 +21,11 @@ public class GoalScriptTentacle : MonoBehaviour
         Debug.Log("Overlapping = " + colliderAtPoint.Length);
         if (colliderAtPoint.Length == 1){
             audioManager.PlaySFX(audioManager.win);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(lastPuzzle){
+                SceneManager.LoadScene(13);
+            }else{
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }else{
             //Debug.Log("Blocked by " + colliderAtPoint.name);
         }

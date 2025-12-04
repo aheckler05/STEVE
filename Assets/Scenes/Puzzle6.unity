@@ -1447,8 +1447,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fe1b977079c1a4c8e8d643f0b7063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdolled: 0
+  Hearts: []
+  Lives: 6
   moveSpeed: 3
---- !u!114 &551534767
+  movementDirection: {x: 0, y: 0}
+--- !u!114 &551534772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1461,6 +1465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDistance: 1
+  slugged: 0
 --- !u!1 &594465311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7226,6 +7231,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373510953086035923, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2102672581735605272, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -7233,6 +7242,10 @@ PrefabInstance:
     - target: {fileID: 3121960956569043230, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_Name
       value: Squid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5712081617812127273, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_LocalScale.x
@@ -7301,7 +7314,7 @@ PrefabInstance:
       addedObject: {fileID: 551534766}
     - targetCorrespondingSourceObject: {fileID: 3121960956569043230, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 551534767}
+      addedObject: {fileID: 551534772}
   m_SourcePrefab: {fileID: 100100000, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
