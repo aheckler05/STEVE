@@ -59,4 +59,13 @@ public class PuzzleMovement : MonoBehaviour
         }
         Hearts[5-this.Lives].SetActive(false);
     }
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.gameObject.name == "Oil"){
+            moveSpeed = 1f;
+            Invoke("fix", 3f);
+        }
+    }
+    public void fix(){
+        moveSpeed = 3f;
+    }
 }
