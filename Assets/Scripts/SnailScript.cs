@@ -31,7 +31,6 @@ public class SnailController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.name == "Squid")
-        if(collision.gameObject.name=="Squid")
         {
             //animation here
             if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
