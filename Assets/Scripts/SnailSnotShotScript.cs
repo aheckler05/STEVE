@@ -19,7 +19,7 @@ public class SnailShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().position=Vector2.MoveTowards(this.gameObject.GetComponent<Rigidbody2D>().position,this.target,0.005f);
+        this.gameObject.GetComponent<Rigidbody2D>().position=Vector2.MoveTowards(this.gameObject.GetComponent<Rigidbody2D>().position,this.target,5f*Time.deltaTime);
         /*if(!targetted)
         {
             float angle = Mathf.Atan2(this.target.y - this.transform.position.y, this.target.x -this.transform.position.x ) * Mathf.Rad2Deg;
