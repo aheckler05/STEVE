@@ -12,11 +12,7 @@ public class pufferfishScript : MonoBehaviour
     float x, y, z;
     int num = 6;
 
-    void OnMouseDown()
-    {
-        speed = 0f;
-        guy.SetActive(false);
-
+    public void shootSpines(){
         for (int i = 0; i < num; i++){
 		
             var point = new Vector3 (guyPos.position.x, guyPos.position.y, guyPos.position.z);
@@ -46,7 +42,13 @@ public class pufferfishScript : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        speed = 0f;
+        guy.SetActive(false);
+    }
 
+    private int i = 0;
     // Update is called once per frame
     void Update()
     {
@@ -57,5 +59,10 @@ public class pufferfishScript : MonoBehaviour
         transform.position = new Vector3(x, y, z);
 
         angle += speed * Time.deltaTime;
+
+        if(i%300 == 1){
+            shootSpines();
+        }
+        i++;
     }
 }
