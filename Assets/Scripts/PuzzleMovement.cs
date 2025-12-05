@@ -6,21 +6,71 @@ using System.Collections.Generic;
 
 public class PuzzleMovement : MonoBehaviour
 {
+    public Sprite coconutSprite;
+    public Sprite basicSprite;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     [SerializeField] private bool ragdolled=false;
     AudioManager audioManager;
 
     [SerializeField] private List<GameObject> Hearts=new List<GameObject>();
+    bool inky=false;
+    public int coconutstacks=0;
+    public bool CoconutCheck()
+    {
+        if(this.coconutstacks>0)
+        {
+            this.coconutstacks=this.coconutstacks-1;
+            if(this.coconutstacks == 0){
+                spriteRenderer.sprite = basicSprite;
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if((collision.gameObject.name=="Coconut"||collision.gameObject.CompareTag("Coconut"))&&this.coconutstacks<2)
+        {   
+            this.coconutstacks=this.coconutstacks+1;
+            if(spriteRenderer != null && coconutSprite != null){
+                spriteRenderer.sprite = coconutSprite;
+            }
+            Destroy(collision.gameObject);
+        }
+        else if(collision.gameObject.name=="Ink Bottle")
+        {
+            StartCoroutine(InkCountdown(15f));
+            Destroy(collision.gameObject);
+        }
+    }
+    IEnumerator InkCountdown(float sec)
+    {
+        this.inky=true;
+        yield return new WaitForSeconds(sec);
+        this.inky=false;
+    }
+    public bool isInky()
+    {
+        return this.inky;
+    }
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
+
+
 
     public int Lives=6;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public float moveSpeed = 3f;
     public Vector2 movementDirection;

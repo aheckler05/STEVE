@@ -33,10 +33,19 @@ public class SnailController : MonoBehaviour
         if(collision.gameObject.name == "Squid")
         {
             //animation here
+            if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
+            {
+                Destroy(this.gameObject);
+                
+            }
+            else
+            {
+                //animation here
             audioManager.PlaySFX(audioManager.death);
             //spriteRenderer.sprite = attackSprite;
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
             
         }
         else if(collision.gameObject.name == "box")
@@ -61,6 +70,7 @@ public class SnailController : MonoBehaviour
             Vector2 temp=ptemp.transform.position;
             GameObject bullet = Instantiate(snailshotprefab,this.transform.position,Quaternion.identity,this.transform);
             bullet.GetComponent<SnailShot>().target=ptemp.transform.position;
+            bullet.GetComponent<SnailShot>().target=Vector2.LerpUnclamped(this.transform.position,ptemp.transform.position,100f);
         }
     }
 

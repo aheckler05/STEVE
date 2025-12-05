@@ -15,6 +15,8 @@ public class anglerfishScript : MonoBehaviour
     public Sprite attackSprite; 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "box" || collision.gameObject.name == "Squid"){
+        if(collision.gameObject.name == "box")
+        {
             //animation here
             audioManager.PlaySFX(audioManager.death);
             spriteRenderer.sprite = attackSprite;
@@ -22,7 +24,26 @@ public class anglerfishScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             
         }
-    }
+        else if (collision.gameObject.name == "Squid")
+        {
+            if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
+            {
+                //animation here
+                audioManager.PlaySFX(audioManager.death);
+                //spriteRenderer.sprite = attackSprite;
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                audioManager.PlaySFX(audioManager.death);
+                spriteRenderer.sprite = attackSprite;
+                transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            }
+   
+         }
+          }
     void Start()
     {
         

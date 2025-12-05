@@ -68,6 +68,16 @@ public class HarpoonScript : MonoBehaviour
             {
                 collision.gameObject.GetComponent<PuzzleMovement>().LifeLoss(1);
                 whaleref.Damage(0);
+
+                if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
+                {
+                    
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<PuzzleMovement>().LifeLoss(1);
+                    whaleref.Damage(0);
+                }
                 if(whaleref.ColorPattern.Contains(this.colorindex))
                 {
                 Vector2 direction = collision.contacts[0].point - (Vector2)this.transform.position;

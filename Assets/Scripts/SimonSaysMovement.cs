@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SimonSaysMovement : MonoBehaviour
 {
+    public Sprite coconutSprite;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     public float moveDistance = 1f;
     private float x = 0;
     private float y = 0;
     public bool slugged = false;
     AudioManager audioManager;
+    public int coconutstacks=0;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -16,6 +19,7 @@ public class SimonSaysMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "Goal"){
@@ -28,10 +32,31 @@ public class SimonSaysMovement : MonoBehaviour
             }
             //update currency
         }
+        else if((collision.gameObject.name=="Coconut"||collision.gameObject.CompareTag("Coconut"))&&this.coconutstacks<2)
+        {   
+            this.coconutstacks=this.coconutstacks+1;
+            if(spriteRenderer != null && coconutSprite != null){
+                spriteRenderer.sprite = coconutSprite;
+            }
+            Destroy(collision.gameObject);
+        }
     }
     //public float moveSpeed = 3f;
     //private Vector2 movementDirection;
     // Update is called once per frame
+
+    public bool CoconutCheck()
+    {
+        if(this.coconutstacks>0)
+        {
+            this.coconutstacks=this.coconutstacks-1;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W)){

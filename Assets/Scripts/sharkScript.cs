@@ -43,8 +43,17 @@ public class sharkScript : MonoBehaviour
             //animation here
             Instantiate(blood, collision.gameObject.transform.position, Quaternion.identity);
             Instantiate(death, collision.gameObject.transform.position, Quaternion.identity);
-            audioManager.PlaySFX(audioManager.death);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+            if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
+            {
+                //animation here
+                audioManager.PlaySFX(audioManager.death);
+                //spriteRenderer.sprite = attackSprite;
+                Destroy(this.gameObject);
+            }else{
+                audioManager.PlaySFX(audioManager.death);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
             
         }
         if(collision.gameObject.name.Contains("Hook")){
@@ -60,6 +69,11 @@ public class sharkScript : MonoBehaviour
 
         // Calculate direction
         Vector2 dir = (player.position - transform.position).normalized;
+        if(player.gameObject.GetComponent<PuzzleMovement>().isInky())
+        {
+            dir.x+=Random.Range(-3f,3f);
+            dir.y+=Random.Range(-3f,3f);
+        }
 
         // Launch enemy
         rb.AddForce(dir * chargeForce, ForceMode2D.Impulse);
