@@ -39,8 +39,16 @@ public class sharkScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "Squid (1)"){
             //animation here
-            audioManager.PlaySFX(audioManager.death);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
+            {
+                //animation here
+                audioManager.PlaySFX(audioManager.death);
+                //spriteRenderer.sprite = attackSprite;
+                Destroy(this.gameObject);
+            }else{
+                audioManager.PlaySFX(audioManager.death);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
             
         }
         if(collision.gameObject.name.Contains("Hook")){
