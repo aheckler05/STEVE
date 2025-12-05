@@ -34,7 +34,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
     void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.name == "Urchin"){
+        if(collision.gameObject.name.Contains("Urchin")){
             Debug.Log("Collision!");
             rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
