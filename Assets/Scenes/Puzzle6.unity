@@ -1448,8 +1448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fe1b977079c1a4c8e8d643f0b7063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coconutSprite: {fileID: 0}
+  basicSprite: {fileID: 0}
   ragdolled: 0
   Hearts: []
+  coconutstacks: 0
   Lives: 6
   moveSpeed: 3
   movementDirection: {x: 0, y: 0}
@@ -1465,8 +1468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2088b93682df1e94face1c1ef9d50b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coconutSprite: {fileID: 4528569261525907327, guid: ac48a88ec6ef80a46b637b7686239121, type: 3}
   moveDistance: 1
   slugged: 0
+  coconutstacks: 0
 --- !u!1 &594465311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,7 +4742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519, y: 41}
+  m_AnchoredPosition: {x: -434, y: 41}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1415068075
