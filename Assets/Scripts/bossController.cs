@@ -8,8 +8,8 @@ public class bossController : MonoBehaviour
     [SerializeField] GameObject bomb;
     [SerializeField] GameObject shark;
     [Header("time")]
-    [SerializeField] float bombInterval = 0.5f;
-    [SerializeField] float sharkInterval = 10;
+    [SerializeField] float bombInterval = 3.5f;
+    [SerializeField] float sharkInterval = 7.5f;
 
     AudioManager audioManager;
     private void Awake()
@@ -20,14 +20,8 @@ public class bossController : MonoBehaviour
     private int hookCount = 5;
     void Start()
     {
-        GameObject newEnemy1 = Instantiate(bomb, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
-        GameObject newEnemy2 = Instantiate(bomb, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
-        StartCoroutine(spawnBomb(bombInterval, bomb));
-        StartCoroutine(spawnBomb(bombInterval, bomb));
-        StartCoroutine(spawnBomb(bombInterval, bomb));
-        StartCoroutine(spawnBomb(bombInterval, bomb));
-        StartCoroutine(spawnBomb(bombInterval, bomb));
-        StartCoroutine(spawnShark(sharkInterval, shark));
+        StartCoroutine(spawn1(bombInterval, bomb));
+        StartCoroutine(spawn2(sharkInterval, shark));
     }
     
     private Vector3 GetSafeSpawnPosition(float minDistance)
@@ -48,21 +42,26 @@ public class bossController : MonoBehaviour
         return spawnPos;
         }
     
-        private IEnumerator spawnBomb(float interval, GameObject enemy)
+        private IEnumerator spawn1(float interval1,  GameObject enemy1)
     {
-        yield return new WaitForSeconds(interval);
-        Vector3 safePos = GetSafeSpawnPosition(2.0f);
-        GameObject newEnemy = Instantiate(enemy, safePos, Quaternion.identity);
-        StartCoroutine(spawnBomb(interval, enemy));
-    
+        while(true) {
+            yield return new WaitForSeconds(interval1);
+                Vector3 safePos = GetSafeSpawnPosition(2.0f);
+                GameObject newEnemy = Instantiate(enemy1, safePos, Quaternion.identity);
+                Vector3 safePos2 = GetSafeSpawnPosition(2.0f);
+                GameObject newEnemy3 = Instantiate(enemy1, safePos2, Quaternion.identity);
+                Vector3 safePos3 = GetSafeSpawnPosition(2.0f);
+                GameObject newEnemy4 = Instantiate(enemy1, safePos3, Quaternion.identity);
+        }  
     }
 
-    private IEnumerator spawnShark(float interval, GameObject enemy)
+            private IEnumerator spawn2(float interval1,  GameObject enemy1)
     {
-        yield return new WaitForSeconds(interval);
-        Vector3 safePos = GetSafeSpawnPosition(4.0f);
-        Instantiate(enemy, safePos, Quaternion.identity);
-        StartCoroutine(spawnShark(interval, enemy));
+        while(true) {
+            yield return new WaitForSeconds(interval1);
+                Vector3 safePos = GetSafeSpawnPosition(4.25f);
+                GameObject newEnemy2 = Instantiate(enemy1, safePos, Quaternion.identity);
+        }  
     }
 
     public void hookDecrease(int i) {
