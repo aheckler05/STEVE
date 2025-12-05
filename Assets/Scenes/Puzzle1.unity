@@ -547,6 +547,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+  m_CurrentSelected: {fileID: 0}
 --- !u!4 &515136301
 Transform:
   m_ObjectHideFlags: 0
@@ -4421,3 +4422,4 @@ SceneRoots:
   - {fileID: 1693294402}
   - {fileID: 835706365}
   - {fileID: 463530297}
+  - {fileID: 528074408}

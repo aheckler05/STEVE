@@ -20,16 +20,24 @@ public class BubbleRing : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "Squid")
         {
+            if(collision.gameObject.GetComponent<PuzzleMovement>().CoconutCheck())
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
             //animation here
             audioManager.PlaySFX(audioManager.death);
             //spriteRenderer.sprite = attackSprite;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             
+            }
         }
         else if (collision.gameObject.name == "box")
         {
             Vector2 targetpos=Vector2.LerpUnclamped(collision.otherRigidbody.position, collision.rigidbody.position,2f);
             collision.rigidbody.AddForce(targetpos*2000);
+            collision.rigidbody.AddForce(targetpos*800);
             Destroy(this.gameObject);
         }
 

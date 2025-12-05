@@ -8,6 +8,7 @@ public class SimonSaysMovement : MonoBehaviour
     private float y = 0;
     public bool slugged = false;
     AudioManager audioManager;
+    public int coconutstacks=0;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -28,10 +29,28 @@ public class SimonSaysMovement : MonoBehaviour
             }
             //update currency
         }
+        else if((collision.gameObject.name=="Coconut"||collision.gameObject.CompareTag("Coconut"))&&this.coconutstacks<2)
+        {   
+            this.coconutstacks=this.coconutstacks+1;
+            Destroy(collision.gameObject);
+        }
     }
     //public float moveSpeed = 3f;
     //private Vector2 movementDirection;
     // Update is called once per frame
+
+    public bool CoconutCheck()
+    {
+        if(this.coconutstacks>0)
+        {
+            this.coconutstacks=this.coconutstacks-1;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W)){

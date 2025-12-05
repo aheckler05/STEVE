@@ -11,10 +11,34 @@ public class PuzzleMovement : MonoBehaviour
     AudioManager audioManager;
 
     [SerializeField] private List<GameObject> Hearts=new List<GameObject>();
+    public int coconutstacks=0;
+    public bool CoconutCheck()
+    {
+        if(this.coconutstacks>0)
+        {
+            this.coconutstacks=this.coconutstacks-1;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if((collision.gameObject.name=="Coconut"||collision.gameObject.CompareTag("Coconut"))&&this.coconutstacks<2)
+        {   
+            this.coconutstacks=this.coconutstacks+1;
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
+
+
 
     public int Lives=6;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
