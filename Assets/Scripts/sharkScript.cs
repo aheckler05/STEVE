@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class sharkScript : MonoBehaviour
 {
     AudioManager audioManager;
+    public GameObject blood;
+    public GameObject death;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -39,11 +41,14 @@ public class sharkScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name == "Squid (1)"){
             //animation here
+            Instantiate(blood, collision.gameObject.transform.position, Quaternion.identity);
+            Instantiate(death, collision.gameObject.transform.position, Quaternion.identity);
             audioManager.PlaySFX(audioManager.death);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             
         }
         if(collision.gameObject.name.Contains("Hook")){
+            Instantiate(blood, collision.gameObject.transform.position, Quaternion.identity);
             audioManager.PlaySFX(audioManager.hit);
             Destroy(this.gameObject);
         }
