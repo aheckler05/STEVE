@@ -10,7 +10,7 @@ public class pufferfishScript : MonoBehaviour
     public float radius = 1f;
     public float angle = 0f;
     float x, y, z;
-    int num = 6;
+    int num = 3;
 
     public void shootSpines(){
         for (int i = 0; i < num; i++){
@@ -60,7 +60,7 @@ public class pufferfishScript : MonoBehaviour
 
         angle += speed * Time.deltaTime;
 
-        if(i%500 == 1){
+        if(i%1000 == 1){
             shootSpines();
         }
         i++;

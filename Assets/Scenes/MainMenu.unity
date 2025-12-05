@@ -801,6 +801,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   damage: {fileID: 8300000, guid: 5039414d94a6e4e70a5ab9e8833e992a, type: 3}
   button: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  explode: {fileID: 0}
 --- !u!1 &341084714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,8 +1201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Squid the Evil and Villanous Entity
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 91f90d87b6f06624d842491c2d11a9f1, type: 2}
-  m_sharedMaterial: {fileID: 8903690629053178143, guid: 91f90d87b6f06624d842491c2d11a9f1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 141a89f10016b75438efa94e5dc6461c, type: 2}
+  m_sharedMaterial: {fileID: 8903690629053178143, guid: 141a89f10016b75438efa94e5dc6461c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3328,7 +3329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.51531905, y: 0.46823332}
   m_AnchorMax: {x: 0.51531905, y: 0.46823332}
-  m_AnchoredPosition: {x: 227, y: 192}
+  m_AnchoredPosition: {x: 193, y: 192}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616239733
@@ -3353,8 +3354,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: S.T.E.V.E.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 91f90d87b6f06624d842491c2d11a9f1, type: 2}
-  m_sharedMaterial: {fileID: 8903690629053178143, guid: 91f90d87b6f06624d842491c2d11a9f1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 141a89f10016b75438efa94e5dc6461c, type: 2}
+  m_sharedMaterial: {fileID: 8903690629053178143, guid: 141a89f10016b75438efa94e5dc6461c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3416,7 +3417,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -483.3711, y: 0, z: 0, w: 0}
+  m_margin: {x: -483.3711, y: 0, z: -93.51125, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

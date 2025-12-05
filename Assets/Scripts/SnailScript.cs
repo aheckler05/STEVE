@@ -16,7 +16,7 @@ public class SnailController : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         ptemp=GameObject.FindWithTag("Player").GetComponent<PuzzleMovement>();
-        StartCoroutine(ShotDelay(5));
+        StartCoroutine(ShotDelay(3));
     }
 
     // Update is called once per frame
