@@ -949,7 +949,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.08, y: 20.08}
+    oldSize: {x: 18.02, y: 18.02}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -997,6 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coconutSprite: {fileID: 0}
+  basicSprite: {fileID: 0}
   ragdolled: 0
   Hearts: []
   coconutstacks: 0
@@ -4343,7 +4344,7 @@ PrefabInstance:
     - target: {fileID: 2102672581735605272, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4528569261525907327, guid: ac48a88ec6ef80a46b637b7686239121, type: 3}
+      objectReference: {fileID: -1333439504715762810, guid: 07caf837a898e6848af1e1a7d7eefdf2, type: 3}
     - target: {fileID: 2102672581735605272, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_SortingOrder
       value: 1
