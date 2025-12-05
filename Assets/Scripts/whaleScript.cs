@@ -109,7 +109,7 @@ public class whaleScript : MonoBehaviour
     public void Damage(int dmg)
     {
         this.HealthBar=this.HealthBar-(dmg*this.ComboCount);
-        if(dmg>0){this.ComboCount=this.ComboCount+1;}
+        if(dmg>0){this.ComboCount=this.ComboCount+5;}
         else{this.ComboCount=0;}
         if(this.HealthBar<=0)
         {

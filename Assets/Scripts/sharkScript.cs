@@ -63,6 +63,11 @@ public class sharkScript : MonoBehaviour
 
         // Calculate direction
         Vector2 dir = (player.position - transform.position).normalized;
+        if(player.gameObject.GetComponent<PuzzleMovement>().isInky())
+        {
+            dir.x+=Random.Range(-3f,3f);
+            dir.y+=Random.Range(-3f,3f);
+        }
 
         // Launch enemy
         rb.AddForce(dir * chargeForce, ForceMode2D.Impulse);

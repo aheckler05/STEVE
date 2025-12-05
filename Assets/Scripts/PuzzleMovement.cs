@@ -14,6 +14,7 @@ public class PuzzleMovement : MonoBehaviour
     AudioManager audioManager;
 
     [SerializeField] private List<GameObject> Hearts=new List<GameObject>();
+    bool inky=false;
     public int coconutstacks=0;
     public bool CoconutCheck()
     {
@@ -30,6 +31,7 @@ public class PuzzleMovement : MonoBehaviour
             return false;
         }
     }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if((collision.gameObject.name=="Coconut"||collision.gameObject.CompareTag("Coconut"))&&this.coconutstacks<2)
@@ -40,8 +42,22 @@ public class PuzzleMovement : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
+        else if(collision.gameObject.name=="Ink Bottle")
+        {
+            StartCoroutine(InkCountdown(15f));
+            Destroy(collision.gameObject);
+        }
     }
-
+    IEnumerator InkCountdown(float sec)
+    {
+        this.inky=true;
+        yield return new WaitForSeconds(sec);
+        this.inky=false;
+    }
+    public bool isInky()
+    {
+        return this.inky;
+    }
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
