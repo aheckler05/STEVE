@@ -41,7 +41,9 @@ public class anglerfishScript : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             }
-    }
+   
+         }
+          }
     void Start()
     {
         
