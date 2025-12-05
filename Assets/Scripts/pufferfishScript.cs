@@ -60,7 +60,7 @@ public class pufferfishScript : MonoBehaviour
 
         angle += speed * Time.deltaTime;
 
-        if(i%300 == 1){
+        if(i%500 == 1){
             shootSpines();
         }
         i++;

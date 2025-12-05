@@ -470,6 +470,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605906324619272252, guid: 32c300681ca4ec24ead817d9b1256925, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8526500339076628267, guid: 32c300681ca4ec24ead817d9b1256925, type: 3}
       propertyPath: m_Name
       value: Crab (1)
@@ -2061,6 +2065,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605906324619272252, guid: 32c300681ca4ec24ead817d9b1256925, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8526500339076628267, guid: 32c300681ca4ec24ead817d9b1256925, type: 3}
       propertyPath: m_Name
       value: Crab
@@ -2158,7 +2166,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -3188702180127858350, guid: 9988d955ec7659d4fb33490e59a0d113, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3819,6 +3827,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   damage: {fileID: 8300000, guid: 5039414d94a6e4e70a5ab9e8833e992a, type: 3}
   button: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  explode: {fileID: 0}
 --- !u!4 &1693294402
 Transform:
   m_ObjectHideFlags: 0

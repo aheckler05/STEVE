@@ -918,7 +918,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551534761}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -3234,7 +3234,7 @@ GameObject:
   - component: {fileID: 1223131008}
   - component: {fileID: 1223131007}
   m_Layer: 0
-  m_Name: powerup
+  m_Name: bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3409,6 +3409,7 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   damage: {fileID: 8300000, guid: 5039414d94a6e4e70a5ab9e8833e992a, type: 3}
   button: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  explode: {fileID: 0}
 --- !u!4 &1314415336
 Transform:
   m_ObjectHideFlags: 0

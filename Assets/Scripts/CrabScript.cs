@@ -30,7 +30,7 @@ public class CrabScript : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Squid"||collision.gameObject.name == "box")
+        if(collision.gameObject.name == "Squid")
         {
             //animation here
             audioManager.PlaySFX(audioManager.death);
@@ -38,6 +38,11 @@ public class CrabScript : MonoBehaviour
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             
+        }else if(collision.gameObject.name == "box"){
+            //animation here
+            audioManager.PlaySFX(audioManager.death);
+            //spriteRenderer.sprite = attackSprite;
+            Destroy(this.gameObject);
         }
     }
 
