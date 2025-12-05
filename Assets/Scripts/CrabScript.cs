@@ -9,7 +9,7 @@ public class CrabScript : MonoBehaviour
     private Vector2 postarget;
     [SerializeField] List<Vector2> patrolpoints;
     [SerializeField] bool islooping=true;
-    private float speed=0.002f;
+    private float speed=2f;
     AudioManager audioManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,7 +25,7 @@ public class CrabScript : MonoBehaviour
     {
         if(postarget!=(Vector2)this.transform.position)
         {
-            this.gameObject.GetComponent<Transform>().position=Vector2.MoveTowards(this.gameObject.GetComponent<Transform>().position,this.postarget,this.speed);
+            this.gameObject.GetComponent<Transform>().position=Vector2.MoveTowards(this.gameObject.GetComponent<Transform>().position,this.postarget,this.speed*Time.deltaTime);
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

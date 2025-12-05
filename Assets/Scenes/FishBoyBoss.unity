@@ -812,6 +812,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: basicSprite
+      value: 
+      objectReference: {fileID: -1333439504715762810, guid: 07caf837a898e6848af1e1a7d7eefdf2, type: 3}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: coconutSprite
+      value: 
+      objectReference: {fileID: 4528569261525907327, guid: ac48a88ec6ef80a46b637b7686239121, type: 3}
     - target: {fileID: 5712081617812127273, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.56
@@ -3189,6 +3197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coconutSprite: {fileID: 4528569261525907327, guid: ac48a88ec6ef80a46b637b7686239121, type: 3}
+  basicSprite: {fileID: 0}
   ragdolled: 0
   Hearts: []
   coconutstacks: 0
