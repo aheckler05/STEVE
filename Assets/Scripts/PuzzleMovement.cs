@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class PuzzleMovement : MonoBehaviour
 {
     public Sprite coconutSprite;
+    public Sprite basicSprite;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     [SerializeField] private bool ragdolled=false;
@@ -19,6 +20,9 @@ public class PuzzleMovement : MonoBehaviour
         if(this.coconutstacks>0)
         {
             this.coconutstacks=this.coconutstacks-1;
+            if(this.coconutstacks == 0){
+                spriteRenderer.sprite = basicSprite;
+            }
             return true;
         }
         else
