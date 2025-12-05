@@ -404,7 +404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -517, y: 124}
+  m_AnchoredPosition: {x: -452, y: 124}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292996398
@@ -806,8 +806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fe1b977079c1a4c8e8d643f0b7063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coconutSprite: {fileID: 0}
+  basicSprite: {fileID: 0}
   ragdolled: 0
   Hearts: []
+  coconutstacks: 0
   Lives: 6
   moveSpeed: 3
   movementDirection: {x: 0, y: 0}
