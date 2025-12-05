@@ -593,7 +593,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_CurrentSelected: {fileID: 0}
 --- !u!4 &376766158
 Transform:
   m_ObjectHideFlags: 0
@@ -950,7 +949,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 18.02, y: 18.02}
+    oldSize: {x: 20.08, y: 20.08}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -997,6 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fe1b977079c1a4c8e8d643f0b7063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coconutSprite: {fileID: 0}
   ragdolled: 0
   Hearts: []
   coconutstacks: 0
@@ -4341,12 +4341,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2102672581735605272, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4528569261525907327, guid: ac48a88ec6ef80a46b637b7686239121, type: 3}
+    - target: {fileID: 2102672581735605272, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3121960956569043230, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_Name
       value: Squid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: coconutSprite
+      value: 
+      objectReference: {fileID: -9198462820180865575, guid: dbcaacc38f39e3246ad96aa26c570b0a, type: 3}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: coconutstacks
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5712081617812127273, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_LocalPosition.x

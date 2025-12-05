@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class PuzzleMovement : MonoBehaviour
 {
+    public Sprite coconutSprite;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     [SerializeField] private bool ragdolled=false;
     AudioManager audioManager;
@@ -29,6 +31,9 @@ public class PuzzleMovement : MonoBehaviour
         if((collision.gameObject.name=="Coconut"||collision.gameObject.CompareTag("Coconut"))&&this.coconutstacks<2)
         {   
             this.coconutstacks=this.coconutstacks+1;
+            if(spriteRenderer != null && coconutSprite != null){
+                spriteRenderer.sprite = coconutSprite;
+            }
             Destroy(collision.gameObject);
         }
     }
@@ -45,6 +50,7 @@ public class PuzzleMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public float moveSpeed = 3f;
     public Vector2 movementDirection;

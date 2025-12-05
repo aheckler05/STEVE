@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3121960956569043230, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_Name
-      value: Squid Variant
+      value: Level1+Whale FIght
       objectReference: {fileID: 0}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: coconutSprite
+      value: 
+      objectReference: {fileID: -9198462820180865575, guid: dbcaacc38f39e3246ad96aa26c570b0a, type: 3}
     - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: Hearts.Array.size
       value: 6

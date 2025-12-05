@@ -547,7 +547,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
-  m_CurrentSelected: {fileID: 0}
 --- !u!4 &515136301
 Transform:
   m_ObjectHideFlags: 0
@@ -4357,6 +4356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squid
       objectReference: {fileID: 0}
+    - target: {fileID: 5023401461652190982, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
+      propertyPath: coconutSprite
+      value: 
+      objectReference: {fileID: 4528569261525907327, guid: ac48a88ec6ef80a46b637b7686239121, type: 3}
     - target: {fileID: 5712081617812127273, guid: 5f7ff1378f2170542bc3440ebcd87c66, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.22
@@ -4422,4 +4425,3 @@ SceneRoots:
   - {fileID: 1693294402}
   - {fileID: 835706365}
   - {fileID: 463530297}
-  - {fileID: 528074408}
